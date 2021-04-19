@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class='containter__recipe'>
+        <h1>{{ dish.dish_name }}</h1>
+        <img class="containter__dish-photo" src="{{ dish.dish_image.url }}" />
+        <div class="containter__ingredients">
+            <h2>Lista składników:</h2>
+            <ul>
+            {% for ing in dish.ingredient_set.all %}
+                <li>{{ ing.ingredient }} / {{ ing.quantity|floatformat:"-1" }} {{ ing.unit }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        <h2>Przygotowanie:</h2>
+        <p>{{ dish.recipe }}</p>
+    </div>
+{% endblock %}

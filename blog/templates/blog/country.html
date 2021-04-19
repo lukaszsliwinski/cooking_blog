@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for dish in dishes %}
+    <div class="container__card">
+        <div class="container__dish-data">
+            <img class="containter__data-icon" src="/media/images/dish16x16.png"> {{ dish.kind_of_meal}} / 
+            <img class="containter__data-icon" src="/media/images/world256x256.png"> {{ dish.country}} / 
+            <img class="containter__data-icon" src="/media/images/date512x512.png"> {{ dish.created_date|date:"Y-m-d" }}
+        </div>
+        <a href="{% url 'details' dish_id=dish.pk %}"><img class="containter__img-link" src="{{ dish.dish_image.url }}"></a>
+        <div class="containter__dish-name">{{ dish }}</div>
+    </div>
+    {% endfor %}
+{% endblock %}
