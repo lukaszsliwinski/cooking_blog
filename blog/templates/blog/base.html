@@ -4,11 +4,20 @@
     <head>
         <title>Cooking blog</title>
         <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="header">
             <a href="{% url 'index' %}"><img class="header__logo" src="/media/images/logo.png"></a>
-            <a href="{% url 'admin:index' %}"><img class="header__login" src="/media/images/login.png"></a>
+            <div class="header__function-buttons">
+                <form action="{% url 'search' %} "method="get">
+                    <input class="header__searchbar" type="text" name="searchbar" placeholder="Search...">
+                    <button class="header__search-button" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <div class="header__login">
+                    <a href="{% url 'admin:index' %}"><img class="header__login" src="/media/images/login.png"></a>
+                </div>
+            </div>
         </div>
         <div class="navigation">
             <p class="navigation__title">KATEGORIE</p>
@@ -24,14 +33,5 @@
             {% block content %}
             {% endblock %}
         </div>  
-
-
-
-        
-        
-
-
-
-        
     </body>
 </html>

@@ -18,7 +18,8 @@ COUNTRIES_LIST = ['Chiny',
                 'Tajlandia',
                 ]
 
-UNITS_LIST =['szt.',
+UNITS_LIST =['',
+            'szt.',
             'ml',
             'l',
             'g',
@@ -40,6 +41,7 @@ for i in range(len(UNITS_LIST)):
     UNITS_CHOICES.append((UNITS_LIST[i], UNITS_LIST[i]))
 
 class MinMaxFloat(models.FloatField):
+    """ FloatField class with limits of values. """
     def __init__(self, min_value=None, max_value=None, *args, **kwargs):
         self.min_value, self.max_value = min_value, max_value
         super(MinMaxFloat, self).__init__(*args, **kwargs)
@@ -52,10 +54,10 @@ class MinMaxFloat(models.FloatField):
 class Dish(models.Model):
     dish_name = models.CharField(max_length=100)
     recipe = models.TextField()
-    dish_image = models.ImageField(null=True, upload_to='images/')
+    dish_image = models.ImageField(blank=True, null=True, upload_to='images/')
     created_date = models.DateTimeField(default=timezone.now)
-    kind_of_meal = models.CharField(max_length=30, null=True, default=None, choices=KINDS_CHOICES)
-    country = models.CharField(max_length=30, null=True, default=None, choices=COUNTRIES_CHOICES)
+    kind_of_meal = models.CharField(max_length=30, default=None, choices=KINDS_CHOICES)
+    country = models.CharField(max_length=30, default=None, choices=COUNTRIES_CHOICES)
     
 
     def __str__(self):
@@ -64,8 +66,8 @@ class Dish(models.Model):
 class Ingredient(models.Model):
     dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
     ingredient = models.CharField(max_length=50)
-    quantity = MinMaxFloat(min_value=0.0, null=True, default=None)
-    unit = models.CharField(max_length=30, null=True, default=None, choices=UNITS_CHOICES)
+    quantity = MinMaxFloat(min_value=0.0, blank=True, null=True, default=None)
+    unit = models.CharField(max_length=30, blank=True, default=None, choices=UNITS_CHOICES)
 
     def __str__(self):
         return self.ingredient

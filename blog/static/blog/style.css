@@ -1,8 +1,7 @@
 :root {
     --dish-data-size: 15px;
     --dish-name-size: 20px;
-    --dark-turquoise: rgb(51, 167, 155);
-    --light-turquoise: rgb(146, 236, 227);
+    --light-turquoise: rgb(198, 255, 249);
 }
 
 body { 
@@ -18,7 +17,17 @@ body {
     width: 100%;
     height: 176px;
     border-bottom: 4px solid black;
+    background-image: url("/media/images/tools.png");
+    background-size: 650px;
+    background-repeat: no-repeat;
+    background-position-x: center;
     background-color: var(--light-turquoise);
+}
+
+@media screen and (max-width: 1058px) {
+    .header {
+        background-image: none !important;
+    }
 }
 
 .header__logo {
@@ -26,10 +35,39 @@ body {
     padding-left: 5px;
 }
 
+.header__function-buttons {
+    display: inline-flex;
+    align-items: flex-start;
+}
+
+.header__searchbar {
+    transition: width 0.5s linear 0.3s;
+    width: 80px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.header__searchbar:hover {
+    width: 300px;
+}
+
+@media screen and (max-width: 624px) {
+    .header__searchbar:hover {
+        width: 135px !important;
+    }
+}
+
+.header__search-button {
+    padding-top: 14px;
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
 .header__login {
-    height: 50px;
-    padding-right: 5px;
-    padding-top: 5px;
+    height: 20px;
+    padding: 8px 8px 0px 3px;
 }
 
 .navigation {
@@ -38,14 +76,17 @@ body {
     display: inline-block;
     width: 200px;
     height: 100%;
-    padding-bottom: 10px;
+    border-right: 4px solid black;
+    padding-bottom: 30px;
     font-family: Arial;
     text-align: center;
 }
 
 .navigation__title {
+    padding-bottom: 10px;
+    padding-top: 10px;
     font-weight: bold;
-    background-color: turquoise;
+    text-decoration: underline;
 }
 
 .navigation__button {
@@ -61,8 +102,7 @@ body {
 }
 
 .navigation__button:hover {
-    background-color: var(--dark-turquoise);
-    color: white;
+    background-color: var(--light-turquoise);
 }
 
 .container {
@@ -82,29 +122,29 @@ body {
     flex-direction: column;
     align-content: flex-end;
     height: 100%;
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 396px;
+    max-width: 396px;
+    border: 2px solid black;
     border-radius: 15px;
     margin: 10px;
-    background-color: var(--dark-turquoise);
+    background-color: var(--light-turquoise);
 }
 
-.containter__img-link {
+.container__img-link {
     object-fit: cover;    
     overflow: hidden;    
-    width: 400px;
+    width: 396px;
     height: 200px;
 }
 
-.containter__img-link:hover {
+.container__img-link:hover {
     opacity: 0.5;
 }
 
-.containter__dish-name {
+.container__dish-name {
     width: calc(100% - 40px);
     height: calc((var(--dish-name-size) * 2) + 20px);
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0px 20px 0px;
     font-size: var(--dish-name-size);
     font-weight: bold;
     text-transform: uppercase;
@@ -114,36 +154,49 @@ body {
 .container__dish-data {
     width: 100%;
     height: calc(var(--dish-data-size) + 5 px);
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 20px;
+    margin: 5px 0px 5px 20px;
     font-size: var(--dish-data-size);
     text-transform: uppercase;
 }
 
-.containter__data-icon {
+.container__data-icon {
     width: var(--dish-data-size);
     height: var(--dish-data-size);
 }
 
-.containter__recipe {
-    display: flex;
-    flex-direction: column;
-    align-content: flex-end;
+.container__details {
     width: 100%;
     height: 100%;
-    min-width: 400px;
+    min-width: 500px;
+    max-width: 996px;
+    border: 2px solid black;
     border-radius: 15px;
-    margin: 10px;
-    background-color: var(--dark-turquoise);
+    margin: 20px;
+    background-color: var(--light-turquoise);
 }
 
-.containter__dish-photo {
-    display: inline-block;
+.container__details-name {
+    display: block;
     width: 100%;
-    max-width: 400px;
+    text-align: center;
 }
 
-.containter__ingredients {
-    display: inline-block;
+.container__details-imgbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container__dish-photo {
+    width: 500px;
+}
+
+.container__details-ingredients {
+    display: block;
+    min-width: 300px;
+}
+
+.container__details-recipe {
+    display: block;
+    margin: 0px 50px 30px 50px;
 }

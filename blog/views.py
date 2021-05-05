@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Q
 from .models import Dish, KINDS_LIST, COUNTRIES_LIST
 
 def index(request):
@@ -24,3 +25,14 @@ def country(request, country):
     kinds_list = KINDS_LIST
     countries_list = COUNTRIES_LIST
     return render(request, 'blog/country.html', {'dishes': dishes, 'kinds_list': kinds_list, 'countries_list': countries_list})
+
+def search(request, query=""):
+    dishes = Dish.objects
+    if request.GET:
+        query = request.GET['searchbar']
+        searched_words = query.split(' ')
+        for word in searched_words:
+            dishes = Dish.objects.filter(Q(dish_name__icontains=word))
+    kinds_list = KINDS_LIST
+    countries_list = COUNTRIES_LIST
+    return render(request, 'blog/search.html', {'dishes': dishes, 'kinds_list': kinds_list, 'countries_list': countries_list})
