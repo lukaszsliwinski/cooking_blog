@@ -16,6 +16,7 @@ COUNTRIES_LIST = ['Chiny',
                 'Indie',
                 'Portugalia',
                 'Tajlandia',
+                'INNE',
                 ]
 
 UNITS_LIST =['',
@@ -40,6 +41,7 @@ for i in range(len(COUNTRIES_LIST)):
 for i in range(len(UNITS_LIST)):
     UNITS_CHOICES.append((UNITS_LIST[i], UNITS_LIST[i]))
 
+
 class MinMaxFloat(models.FloatField):
     """ FloatField class with limits of values. """
     def __init__(self, min_value=None, max_value=None, *args, **kwargs):
@@ -51,6 +53,7 @@ class MinMaxFloat(models.FloatField):
         defaults.update(kwargs)
         return super(MinMaxFloat, self).formfield(**defaults)
 
+
 class Dish(models.Model):
     dish_name = models.CharField(max_length=100)
     recipe = models.TextField()
@@ -58,10 +61,10 @@ class Dish(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     kind_of_meal = models.CharField(max_length=30, default=None, choices=KINDS_CHOICES)
     country = models.CharField(max_length=30, default=None, choices=COUNTRIES_CHOICES)
-    
 
     def __str__(self):
         return self.dish_name
+
 
 class Ingredient(models.Model):
     dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
@@ -71,3 +74,11 @@ class Ingredient(models.Model):
 
     def __str__(self):
         return self.ingredient
+
+
+class Spice(models.Model):
+    dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
+    spice = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.spice

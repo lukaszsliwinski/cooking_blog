@@ -1,9 +1,13 @@
 from django.contrib import admin
 
-from .models import Dish, Ingredient
+from .models import Dish, Ingredient, Spice
 
 class IngredientsInLine(admin.TabularInline):
     model = Ingredient
+    extra = 0
+
+class SpicesInLine(admin.TabularInline):
+    model = Spice
     extra = 0
 
 class DishAdmin(admin.ModelAdmin):
@@ -13,6 +17,6 @@ class DishAdmin(admin.ModelAdmin):
         ('How to prepare?', {'fields': ['recipe']}),
         ('Load image', {'fields': ['dish_image']}),
     ]
-    inlines = [IngredientsInLine]
+    inlines = [IngredientsInLine, SpicesInLine]
 
 admin.site.register(Dish, DishAdmin)

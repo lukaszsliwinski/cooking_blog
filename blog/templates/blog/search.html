@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for dish in dishes %}
-    <div class="container__card">
+    <article class="container__card">
         <div class="container__dish-data">
             <img class="container__data-icon" src="/media/images/dish16x16.png"> {{ dish.kind_of_meal}} / 
             <img class="container__data-icon" src="/media/images/world256x256.png"> {{ dish.country}} / 
@@ -13,7 +13,7 @@
         {% else %}
         <a href="{% url 'details' dish_id=dish.pk %}"><img class="container__img-link" src="/media/images/default-dish-img.png"></a>
         {% endif %}
-        <div class="container__dish-name">{{ dish }}</div>
-    </div>
+        <h2 class="container__dish-name">{{ dish }}</h2>
+    </article>
     {% endfor %}
 {% endblock %}

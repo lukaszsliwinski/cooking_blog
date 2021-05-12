@@ -7,19 +7,19 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div class="header">
+        <header class="header">
             <a href="{% url 'index' %}"><img class="header__logo" src="/media/images/logo.png"></a>
-            <div class="header__function-buttons">
+            <nav class="header__function-buttons">
                 <form action="{% url 'search' %} "method="get">
                     <input class="header__searchbar" type="text" name="searchbar" placeholder="Search...">
                     <button class="header__search-button" type="submit"><i class="fa fa-search"></i></button>
                 </form>
                 <div class="header__login">
-                    <a href="{% url 'admin:index' %}"><img class="header__login" src="/media/images/login.png"></a>
+                    <a href="{% url 'admin:index' %}"><img class="header__login-img" src="/media/images/login.png"></a>
                 </div>
-            </div>
-        </div>
-        <div class="navigation">
+            </nav>
+        </header>
+        <nav class="navigation">
             <p class="navigation__title">KATEGORIE</p>
             {% for kind in kinds_list %}
                 <a href="{% url 'category' category=kind %}" class="navigation__button">{{ kind }}</a>
@@ -28,10 +28,10 @@
             {% for country in countries_list %}
                 <a href="{% url 'country' country=country %}" class="navigation__button">{{ country }}</a>
             {% endfor %}
-        </div>
-        <div class="container">
+        </nav>
+        <section class="container">
             {% block content %}
             {% endblock %}
-        </div>  
+        </section>  
     </body>
 </html>

@@ -1,15 +1,15 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="container__details">
+    <article class="container__details">
 
         <div class="container__details-name">
-            <h1>{{ dish.dish_name }}</h1>
+            <h2>{{ dish.dish_name }}</h2>
         </div>    
 
         <div class="container__details-imgbox">
             <div class="container__details-ingredients">
-                <h2>Lista składników:</h2>
+                <h3>Lista składników:</h3>
                 <ul>
                 {% for ing in dish.ingredient_set.all %}
                     {% if ing.quantity == NULL or ing.unit == '' %}
@@ -19,20 +19,26 @@
                     {% endif %}
                 {% endfor %}
                 </ul>
+                <h3>Lista przypraw:</h3>
+                <ul>
+                {% for spice in dish.spice_set.all %}
+                        <li>{{ spice.spice }}</li>
+                {% endfor %}
+                </ul>
             </div>
-            <div class="container__dish-photo">
+            <div>
                 {% if dish.dish_image %}
-                <img src="{{ dish.dish_image.url }}" width="500">
+                <img class="container__dish-photo" src="{{ dish.dish_image.url }}">
                 {% else %}
-                <img src="/media/images/default-dish-img.png" width="500">
+                <img class="container__dish-photo" src="/media/images/default-dish-img.png">
                 {% endif %}
             </div>
         </div>
                 
         <div class="container__details-recipe">
-            <h2>Przygotowanie:</h2>
-            <p>{{ dish.recipe }}</p>
+            <h3>Przygotowanie:</h3>
+            <p>{{ dish.recipe|linebreaks }}</p>
         </div>
     
-    </div>
+    </article>
 {% endblock %}
