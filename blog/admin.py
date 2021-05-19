@@ -13,7 +13,7 @@ class SpicesInLine(admin.TabularInline):
 class DishAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Name of dish?', {'fields': ['dish_name']}),
-        ('Category', {'fields': ['kind_of_meal', 'country']}),
+        ('Category', {'fields': ['kind_of_meal', 'country', 'diet']}),
         ('How to prepare?', {'fields': ['recipe']}),
         ('Load image', {'fields': ['dish_image']}),
     ]

@@ -28,6 +28,10 @@
             {% for country in countries_list %}
                 <a href="{% url 'country' country=country %}" class="navigation__button">{{ country }}</a>
             {% endfor %}
+            <p class="navigation__title">DIETETYCZNE</p>
+            {% for kind in kinds_list %}
+                <a href="{% url 'diet' category=kind %}" class="navigation__button">{{ kind }}</a>
+            {% endfor %}
         </nav>
         <section class="container">
             {% block content %}

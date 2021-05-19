@@ -13,7 +13,10 @@
         {% else %}
         <a href="{% url 'details' dish_id=dish.pk %}"><img class="container__img-link" src="/media/images/default-dish-img.png"></a>
         {% endif %}
-        <h2 class="container__dish-name">{{ dish }}</h2>
+        <h2 class="container__dish-name">
+            {% if dish.diet == True %} <img class="containter__diet-icon" src="/media/images/apple.png"> {% endif %}
+            {{ dish }}
+        </h2>
     </article>
     {% endfor %}
 {% endblock %}

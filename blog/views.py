@@ -26,6 +26,12 @@ def country(request, country):
     countries_list = COUNTRIES_LIST
     return render(request, 'blog/country.html', {'dishes': dishes, 'kinds_list': kinds_list, 'countries_list': countries_list})
 
+def diet(request, category):
+    dishes = Dish.objects.filter(kind_of_meal=category, diet=True).order_by('-created_date')
+    kinds_list = KINDS_LIST
+    countries_list = COUNTRIES_LIST
+    return render(request, 'blog/diet.html', {'dishes': dishes, 'kinds_list': kinds_list, 'countries_list': countries_list})
+
 def search(request, query=""):
     dishes = Dish.objects
     if request.GET:

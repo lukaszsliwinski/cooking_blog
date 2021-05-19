@@ -145,6 +145,10 @@ body {
     opacity: 0.5;
 }
 
+.containter__diet-icon {
+    height: 15px;
+}
+
 .container__dish-name {
     width: calc(100% - 40px);
     height: calc((var(--dish-name-size) * 2) + 20px);
