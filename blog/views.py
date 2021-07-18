@@ -47,4 +47,4 @@ def search(request, query=""):
             dishes = Dish.objects.filter(Q(dish_name__icontains=word)).order_by('-created_date')
     kinds_list = KINDS_LIST
     countries_list = COUNTRIES_LIST
-    return render(request, 'blog/search.html', {'dishes': dishes, 'kinds_list': kinds_list, 'countries_list': countries_list})
+    return render(request, 'blog/index.html', {'dishes': dishes, 'kinds_list': kinds_list, 'countries_list': countries_list})

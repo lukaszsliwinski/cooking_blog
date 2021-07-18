@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<section class="container">
     {% for dish in dishes %}
     <article class="container__card">
         <div class="container__dish-data">
@@ -19,4 +20,5 @@
         </a>
     </article>
     {% endfor %}
+</section>
 {% endblock %}
