@@ -9,27 +9,45 @@
     </head>
     <body>
         <header class="header">
-            <h1 class="header__name">Cooking blog</h1>
+            <a href="{% url 'index' %}" class="header__name">Cooking blog</a>
             <form class="header__search" action="{% url 'search' %} "method="get">
                 <input class="header__search-bar" type="text" name="searchbar" placeholder="Search...">
                 <button class="header__search-button" type="submit"><i class="fa fa-search"></i></button>
             </form>
             <a href="{% url 'admin:index' %}"><img class="header__login" src="/media/images/login.png"></a>
         </header>
-        <!-- <nav class="navigation">
-            <p class="navigation__title">KATEGORIE</p>
-            {% for kind in kinds_list %}
-                <a href="{% url 'category' category=kind %}" class="navigation__button">{{ kind }}</a>
-            {% endfor %}
-            <p class="navigation__title">KRAJE</p>
-            {% for country in countries_list %}
-                <a href="{% url 'country' country=country %}" class="navigation__button">{{ country }}</a>
-            {% endfor %}
-            <p class="navigation__title">DIETETYCZNE</p>
-            {% for kind in kinds_list %}
-                <a href="{% url 'diet' category=kind %}" class="navigation__button">{{ kind }}</a>
-            {% endfor %}
-        </nav> -->
+        <nav class="navigation">
+            
+            <ul class="navigation__dropdown">
+                <li class="navigation__button">KATEGORIE</li>
+                {% for kind in kinds_list %}
+                <li><a href="{% url 'category' category=kind %}" class="navigation__link">{{ kind }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <ul class="navigation__dropdown">
+                <li class="navigation__button">KRAJE</li>
+                {% for country in countries_list %}
+                <li><a href="{% url 'country' country=country %}" class="navigation__link">{{ country }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <ul class="navigation__dropdown">
+                <li class="navigation__button"><img class="containter__diet-icon" src="/media/images/apple.png"> KATEGORIE</li>
+                {% for kind in kinds_list %}
+                <li><a href="{% url 'category_diet' category=kind %}" class="navigation__link">{{ kind }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <ul class="navigation__dropdown">
+                <li class="navigation__button"><img class="containter__diet-icon" src="/media/images/apple.png"> KRAJE</li>
+                {% for country in countries_list %}
+                <li><a href="{% url 'country_diet' country=country %}" class="navigation__link">{{ country }}</a></li>
+                {% endfor %}
+            </ul>
+
+
+        </nav>
         <section class="container">
             {% block content %}
             {% endblock %}

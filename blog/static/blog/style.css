@@ -18,14 +18,14 @@ body {
 }
 
 .header {
-    /* position: fixed; */
+    position: fixed;
     z-index: 10;
     display: inline-flex;
     justify-content: flex-end;
     align-items: flex-end;
     width: 100%;
-    /* min-width: 600px; */
-    height: 100px;
+    min-width: 600px;
+    height: 130px;
     background-image: url("/media/images/tools.png");
     background-size: 100px;
     background-repeat: repeat-x;
@@ -39,11 +39,12 @@ body {
     font-family: 'Rock Salt', cursive;
     color: var(--yellow);
     font-size: 35px;
-    padding: 0 0 15px 15px;
+    padding: 0 0 45px 15px;
+    text-decoration: none;
 }
 
 .header__search {
-    padding-bottom: 10px;
+    padding-bottom: 40px;
 }
 
 .header__search-bar {
@@ -65,7 +66,7 @@ body {
 }
 
 .header__login {
-    padding: 3px 10px 11px 0;
+    padding: 3px 10px 41px 0;
     height: 20px;
 }
 
@@ -78,40 +79,71 @@ body {
 
 
 .navigation {
-    position: relative;    
-    top: 180px;    
-    display: inline-block;
-    /* display: none; */
-    width: 200px;
-    height: 100%;
-    border-right: 4px solid black;
-    padding-bottom: 30px;
-    font-family: Arial;
-    text-align: center;
+    display: inline-flex;
+    z-index: 20;
+    position: fixed;
+    top: 100px;
+    width: 100%;
+
 }
 
-.navigation__title {
-    padding-bottom: 10px;
-    padding-top: 10px;
-    font-weight: bold;
-    text-decoration: underline;
+.navigation__dropdown {
+    display: block;
+    width: 150px;
+    min-width: 150px;
+    justify-content: center;
 }
+
 
 .navigation__button {
-    display: block;
-    align-items: center; 
-    width: 200px;
-    padding-top: 20px;   
-    border-bottom: 1px solid black;
-    font-size: 15px;   
-    text-transform: uppercase;
+    box-sizing: border-box;
+    height: 30px;
+    background-color: var(--violet);
+    font-size: 16px;
+    padding: 7px 0;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 1px solid black;
+
+
+}
+
+.navigation__link {
+    display: none;
+    padding: 8px 0 8px 5px;
+    background-color: var(--violet);
+    font-size: 14px;
     text-decoration: none;
     color: black;
+    text-transform: uppercase;
+}
+
+.navigation__link:last-child {
+    border-bottom: 1px solid black;
+}
+
+.navigation__link:hover {
+    background-color: var(--yellow);
+    color: black;
+    
+    
 }
 
 .navigation__button:hover {
-    background-color: var(--light-turquoise);
+    background-color: var(--yellow);
+    cursor: pointer;
 }
+
+.navigation__dropdown:hover .navigation__link {
+    display: block;
+}
+
+
+
+
+
+
+
 
 
 
