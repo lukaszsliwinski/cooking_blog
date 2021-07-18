@@ -16,7 +16,7 @@
             </form>
             <a href="{% url 'admin:index' %}"><img class="header__login" src="/media/images/login.png"></a>
         </header>
-        <nav class="navigation">
+        <!-- <nav class="navigation">
             <p class="navigation__title">KATEGORIE</p>
             {% for kind in kinds_list %}
                 <a href="{% url 'category' category=kind %}" class="navigation__button">{{ kind }}</a>
@@ -29,7 +29,7 @@
             {% for kind in kinds_list %}
                 <a href="{% url 'diet' category=kind %}" class="navigation__button">{{ kind }}</a>
             {% endfor %}
-        </nav>
+        </nav> -->
         <section class="container">
             {% block content %}
             {% endblock %}
