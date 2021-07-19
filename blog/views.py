@@ -12,7 +12,7 @@ def details(request, dish_id):
     dish = Dish.objects.get(pk=dish_id)
     kinds_list = KINDS_LIST
     countries_list = COUNTRIES_LIST
-    return render(request, 'blog/details.html', {'dish': dish, 'kinds_list': kinds_list, 'countries_list': countries_list})
+    return render(request, 'blog/dish.html', {'dish': dish, 'kinds_list': kinds_list, 'countries_list': countries_list})
 
 def category(request, category):
     dishes = Dish.objects.filter(kind_of_meal=category).order_by('-created_date')

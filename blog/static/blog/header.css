@@ -1,0 +1,62 @@
+/* Styles for header classes */
+
+.header {
+    position: fixed;
+    z-index: 10;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    min-width: 450px;
+    height: 130px;
+    background-image: url("/media/images/tools.png");
+    background-size: 100px;
+    background-repeat: repeat-x;
+    background-position-x: left;
+    background-color: white;
+    border-bottom: 31px solid var(--violet);
+    box-sizing: border-box;
+}
+
+
+.header__name {
+    margin-right: auto;
+    font-family: 'Rock Salt', cursive;
+    color: black;
+    font-size: 35px;
+    padding: 0 0 15px 15px;
+    text-decoration: none;
+}
+
+.header__search {
+    padding-bottom: 10px;
+}
+
+.header__search-bar {
+    width: 80px;
+    height: 20px;
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    .header__search-bar:hover {
+        width: 200px;
+        transition: width 0.3s linear 0.2s;
+    }
+
+}
+
+
+
+
+.header__search-button {
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.header__login {
+    padding: 3px 10px 11px 0;
+    height: 20px;
+}

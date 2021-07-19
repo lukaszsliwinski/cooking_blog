@@ -1,0 +1,61 @@
+/* Styles dish details page */
+
+
+.dish {
+    display: inline-flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    align-items: center;
+}
+
+.dish__name {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: 650px;
+    margin: 20px 0;
+
+}
+
+
+
+.dish__img {
+    width: 650px;
+}
+
+.dish__ingredients {
+    box-sizing: border-box;
+    display: block;
+    min-width: 300px;
+    width: 650px;
+    padding-top: 10px;
+    border-top: 3px solid var(--violet);
+    margin-top: 20px;
+
+}
+
+.dish__ingredients-list {
+    list-style-type: square;
+    margin: 10px 0 10px 20px;
+} 
+    
+
+.dish__recipe {
+    display: block;
+    width: 650px;
+    padding-top: 10px;
+    border-top: 3px solid var(--violet);
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.dish__recipe-details {
+    padding-top: 8px;
+    text-align: justify;
+
+}
