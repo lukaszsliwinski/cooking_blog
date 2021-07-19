@@ -273,7 +273,7 @@ input:hover {
 
 
 
-.container__details {
+.dish {
     display: inline-flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -286,7 +286,7 @@ input:hover {
 
 }
 
-.container__details-name {
+.dish__name {
     display: block;
     font-size: 30px;
     font-weight: bold;
@@ -300,11 +300,11 @@ input:hover {
 
 
 
-.container__dish-photo {
+.dish__img {
     width: 650px;
 }
 
-.container__details-ingredients {
+.dish__ingredients {
     box-sizing: border-box;
     display: block;
     min-width: 300px;
@@ -315,7 +315,7 @@ input:hover {
 
 }
 
-.container__details-ingredients ul {
+.dish__ingredients-list {
     list-style-type: square;
     margin: 10px 0 10px 20px;
 } 
@@ -323,7 +323,7 @@ input:hover {
 
 
 
-.container__details-recipe {
+.dish__recipe {
     display: block;
     width: 650px;
     padding-top: 10px;
@@ -332,7 +332,7 @@ input:hover {
     margin-bottom: 50px;
 }
 
-.container__details-recipe p {
+.dish__recipe-details {
     padding-top: 8px;
     text-align: justify;
 

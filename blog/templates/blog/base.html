@@ -17,7 +17,7 @@
             <a href="{% url 'admin:index' %}"><img class="header__login" src="/media/images/login.png"></a>
         </header>
         <nav class="navigation">
-            
+
             <ul class="navigation__dropdown">
                 <li class="navigation__button">KATEGORIE</li>
                 {% for kind in kinds_list %}
@@ -45,7 +45,6 @@
                 <li><a href="{% url 'country_diet' country=country %}" class="navigation__link">{{ country }}</a></li>
                 {% endfor %}
             </ul>
-
 
         </nav>
         
