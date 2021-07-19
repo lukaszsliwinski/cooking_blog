@@ -125,7 +125,7 @@ input:hover {
     padding: 7px 0;
     text-align: center;
     box-sizing: border-box;
-    border-right: 1px solid black;
+    border-right: 1px solid white;
     color: white;
 
 
@@ -139,11 +139,10 @@ input:hover {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
+    border-top: 1px solid white;
 }
 
-.navigation__link:last-child {
-    border-bottom: 1px solid black;
-}
+
 
 .navigation__link:hover {
     background-color: var(--yellow);
@@ -205,7 +204,8 @@ input:hover {
     width: 400px;
     min-width: 400px;
     margin: 10px;
-    background-color: var(--violet);
+    background-color: transparent;
+
 }
 
 .container__img-link {
@@ -216,9 +216,14 @@ input:hover {
     height: 150px;
 }
 
-.container__card:hover .container__img-link {
-    opacity: 0.8;
-    transition: opacity 0.15s linear 0.05s;
+.container__card:hover {
+    background-color: var(--violet);
+    transition: background-color 0.15s linear 0.05s;
+}
+
+.container__card:hover .container__dish-name {
+    color: white;
+    transition: color 0.15s linear 0.05s;
 }
 
 .container__dish-data {
@@ -249,7 +254,7 @@ input:hover {
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .container__data-icon {
@@ -287,7 +292,7 @@ input:hover {
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     width: 650px;
     margin: 20px 0;
 
