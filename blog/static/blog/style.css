@@ -13,9 +13,10 @@
 
 /* HTML tags */
 
-body { 
-    font-family: Tahoma;
+body {
     min-width: 600px;
+    font-family: Tahoma;
+    
 }
 
 h3 {

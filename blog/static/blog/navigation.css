@@ -2,19 +2,18 @@
 
 
 .navigation {
-    display: inline-flex;
-    z-index: 20;
     position: fixed;
+    z-index: 20;
     top: 100px;
+    display: inline-flex;
     width: 100%;
-
 }
 
 .navigation__dropdown, .navigation__dropdown-diet {
+    justify-content: center;
     display: block;
     width: 150px;
     min-width: 150px;
-    justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -23,45 +22,37 @@
     }
 }
 
-
 .navigation__button {
+    border-right: 1px solid white;
     box-sizing: border-box;
     height: 30px;
+    padding: 7px 0;
     background-color: var(--violet);
     font-size: 16px;
-    padding: 7px 0;
     text-align: center;
-    box-sizing: border-box;
-    border-right: 1px solid white;
     color: white;
-
-
-}
-
-.navigation__link {
-    display: none;
-    padding: 8px 0 8px 5px;
-    background-color: var(--violet);
-    font-size: 14px;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    border-top: 1px solid white;
-}
-
-
-
-.navigation__link:hover {
-    background-color: var(--yellow);
-    color: black;
-    
-    
 }
 
 .navigation__button:hover {
     background-color: var(--yellow);
     cursor: pointer;
     color: black;
+}
+
+.navigation__link {
+    display: none;
+    border-top: 1px solid white;
+    padding: 8px 0 8px 5px;
+    background-color: var(--violet);
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+}
+
+.navigation__link:hover {
+    background-color: var(--yellow);
+    color: black; 
 }
 
 .navigation__dropdown:hover .navigation__link {

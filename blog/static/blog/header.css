@@ -1,31 +1,27 @@
 /* Styles for header classes */
 
+
 .header {
     position: fixed;
     z-index: 10;
-    display: inline-flex;
     justify-content: flex-end;
     align-items: flex-end;
+    display: inline-flex;
     width: 100%;
     min-width: 450px;
     height: 130px;
-    background-image: url("/media/images/tools.png");
-    background-size: 100px;
-    background-repeat: repeat-x;
-    background-position-x: left;
-    background-color: white;
-    border-bottom: 31px solid var(--violet);
     box-sizing: border-box;
+    border-bottom: 31px solid var(--violet);
+    background: white url("/media/images/tools.png") repeat-x left top;
+    background-size: 100px;
 }
-
 
 .header__name {
     margin-right: auto;
-    font-family: 'Rock Salt', cursive;
-    color: black;
-    font-size: 35px;
-    padding: 0 0 15px 15px;
+    padding-left: 15px;
+    font: 35px 'Rock Salt', cursive;
     text-decoration: none;
+    color: black;
 }
 
 .header__search {
@@ -40,14 +36,11 @@
 
 @media only screen and (min-width: 600px) {
     .header__search-bar:hover {
-        width: 200px;
         transition: width 0.3s linear 0.2s;
+        width: 200px;
     }
 
 }
-
-
-
 
 .header__search-button {
     border: 0px;
@@ -57,6 +50,6 @@
 }
 
 .header__login {
-    padding: 3px 10px 11px 0;
     height: 20px;
+    padding: 3px 10px 11px 0;  
 }
