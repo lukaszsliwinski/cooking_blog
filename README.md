@@ -9,6 +9,7 @@ SQLite3
 ## Setup
 Clone this repository.<br>
 Run ' $ python manage.py runserver ' in main directory to run application on localhost (127.0.0.1:8000)<br>
+<br>
 Run http://127.0.0.1:8000\admin and log in<br>
 Default username: admin<br>
 Default password: admin<br>
