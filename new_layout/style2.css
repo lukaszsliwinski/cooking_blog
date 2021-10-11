@@ -1,0 +1,27 @@
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 50px;   /*****/
+    overflow: hidden;
+    transition: all 0.8s;
+}
+  
+.panel.active {
+    max-height: 500px;
+}
+  
+.title {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 200px;
+    height: 50px;  /*****/
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+.title.active, .title:hover {
+    background-color: #ccc;
+}
