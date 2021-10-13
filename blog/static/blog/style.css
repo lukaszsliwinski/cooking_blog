@@ -21,10 +21,11 @@
 /* HTML tags */
 
 body {
-    min-width: 600px;
-    font-family: Tahoma;
+    display: flex;
+    flex-wrap: wrap;
     background-color: var(--black);
-    
+    min-width: 600px;
+    font-family: 'Nunito', sans-serif
 }
 
 h3 {

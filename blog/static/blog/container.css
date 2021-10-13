@@ -3,11 +3,14 @@
 
 .container {
     position: absolute;
-    top: 180px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     display: inline-flex;
+    top: 150px;
+    left: 200px;
+    width: calc(100% - 200px);
+    /* height: 1500px; */
 }
 
 .container__card {

@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'blog/container.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/dish.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
     <body>
         <header class="header">
@@ -21,40 +22,46 @@
             <a href="{% url 'admin:index' %}" class="header__login">login</a>
             <a href="{% url 'index' %}" class="header__home">home</a>
         </header>
-        <!-- <nav class="navigation">
+        <nav class="menu">
 
-            <ul class="navigation__dropdown">
-                <li class="navigation__button">KATEGORIE</li>
-                {% for kind in kinds_list %}
-                <li><a href="{% url 'category' category=kind %}" class="navigation__link">{{ kind }}</a></li>
-                {% endfor %}
-            </ul>
+            <div class="menu__wrapper">
+                <button class="menu__title">KATEGORIE</button>
+                <ul class="menu__accordion">
+                    {% for kind in kinds_list %}
+                    <li><a href="{% url 'category' category=kind %}" class="menu__link">{{ kind }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-            <ul class="navigation__dropdown">
-                <li class="navigation__button">KRAJE</li>
-                {% for country in countries_list %}
-                <li><a href="{% url 'country' country=country %}" class="navigation__link">{{ country }}</a></li>
-                {% endfor %}
-            </ul>
+            <div class="menu__wrapper">
+                <button class="menu__title">KRAJE</button>
+                <ul class="menu__accordion">
+                    {% for country in countries_list %}
+                    <li><a href="{% url 'country' country=country %}" class="menu__link">{{ country }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-            <ul class="navigation__dropdown-diet">
-                <li class="navigation__button"><img class="containter__diet-icon" src="/media/images/apple.png"> KATEGORIE</li>
-                {% for kind in kinds_list %}
-                <li><a href="{% url 'category_diet' category=kind %}" class="navigation__link">{{ kind }}</a></li>
-                {% endfor %}
-            </ul>
+            <div class="menu__wrapper">
+                <button class="menu__title"><img class="containter__diet-icon" src="/media/images/apple.png"> KATEGORIE</button>
+                <ul class="menu__accordion">
+                    {% for kind in kinds_list %}
+                    <li><a href="{% url 'category_diet' category=kind %}" class="menu__link">{{ kind }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-            <ul class="navigation__dropdown-diet">
-                <li class="navigation__button"><img class="containter__diet-icon" src="/media/images/apple.png"> KRAJE</li>
-                {% for country in countries_list %}
-                <li><a href="{% url 'country_diet' country=country %}" class="navigation__link">{{ country }}</a></li>
-                {% endfor %}
-            </ul>
-
-        </nav> -->
-        
-            {% block content %}
-            {% endblock %}
+            <div class="menu__wrapper">
+                <button class="menu__title"><img class="containter__diet-icon" src="/media/images/apple.png"> KRAJE</button>
+                <ul class="menu__accordion">
+                    {% for country in countries_list %}
+                    <li><a href="{% url 'country_diet' country=country %}" class="menu__link">{{ country }}</a></li>
+                    {% endfor %}
+            </div>
+            <script type="text/javascript" src="{% static 'blog/menu.js' %}"></script>
+        </nav>
+        {% block content %}
+        {% endblock %}
  
     </body>
 </html>
