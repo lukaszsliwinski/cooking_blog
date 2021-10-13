@@ -25,7 +25,7 @@
     user-select: none;
 }
 
-.header__search {
+.header__search-wrapper {
     position: absolute;
     bottom: 15px;
 }
@@ -37,13 +37,13 @@
     padding: 3px;
 }
 
-/* @media only screen and (min-width: 600px) {
-    .header__search-bar:hover {
-        transition: width 0.3s linear 0.2s;
-        width: 300px;
+@media only screen and (max-width: 600px) {
+    .header__name {
+        font-size: 50px;
+        top: 40px;
     }
 
-} */
+}
 
 .header__search-button {
     border: 0px;
@@ -75,10 +75,7 @@
     right: 10px;
 }
 
+.header__home:hover,
 .header__login:hover {
-    color: var(--violet);
-}
-
-.header__home:hover {
     color: var(--violet);
 }
