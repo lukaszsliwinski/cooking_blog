@@ -4,7 +4,8 @@
 .menu {
     position: fixed;
     top: 170px;
-    width: 200px;
+    width: 190px;
+    margin-left: 10px;
 }
 
 
@@ -33,7 +34,7 @@
     padding: 18px;
     width: 200px;
     height: 50px;
-    text-align: center;
+    text-align: left;
     border: none;
     outline: none;
     font-size: 16px;
@@ -65,4 +66,9 @@
 
 .menu__link:hover {
     color: var(--violet);
+}
+
+.menu__legend {
+    margin: 60px 18px;
+    color: white;
 }

@@ -43,7 +43,7 @@
             </div>
 
             <div class="menu__wrapper">
-                <button class="menu__title"><img class="containter__diet-icon" src="/media/images/apple.png"> KATEGORIE</button>
+                <button class="menu__title">KATEGORIE <img class="containter__diet-icon" src="/media/images/apple.png"></button>
                 <ul class="menu__accordion">
                     {% for kind in kinds_list %}
                     <li><a href="{% url 'category_diet' category=kind %}" class="menu__link">{{ kind }}</a></li>
@@ -52,13 +52,14 @@
             </div>
 
             <div class="menu__wrapper">
-                <button class="menu__title"><img class="containter__diet-icon" src="/media/images/apple.png"> KRAJE</button>
+                <button class="menu__title">KRAJE <img class="containter__diet-icon" src="/media/images/apple.png"></button>
                 <ul class="menu__accordion">
                     {% for country in countries_list %}
                     <li><a href="{% url 'country_diet' country=country %}" class="menu__link">{{ country }}</a></li>
                     {% endfor %}
             </div>
             <script type="text/javascript" src="{% static 'blog/menu.js' %}"></script>
+            <div class="menu__legend"><img class="containter__diet-icon" src="/media/images/apple.png"> - DIET</div>
         </nav>
         {% block content %}
         {% endblock %}
