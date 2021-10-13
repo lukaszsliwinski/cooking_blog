@@ -13,14 +13,15 @@
     </head>
     <body>
         <header class="header">
-            <a href="{% url 'index' %}" class="header__name">Cooking blog</a>
+            <h1 class="header__name">cooking blog</h1>
             <form class="header__search" action="{% url 'search' %} "method="get">
                 <input class="header__search-bar" type="text" name="searchbar" placeholder="Search...">
                 <button class="header__search-button" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <a href="{% url 'admin:index' %}"><img class="header__login" src="/media/images/login.png"></a>
+            <a href="{% url 'admin:index' %}" class="header__login">login</a>
+            <a href="{% url 'index' %}" class="header__home">home</a>
         </header>
-        <nav class="navigation">
+        <!-- <nav class="navigation">
 
             <ul class="navigation__dropdown">
                 <li class="navigation__button">KATEGORIE</li>
@@ -50,7 +51,7 @@
                 {% endfor %}
             </ul>
 
-        </nav>
+        </nav> -->
         
             {% block content %}
             {% endblock %}

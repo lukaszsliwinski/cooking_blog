@@ -4,52 +4,81 @@
 .header {
     position: fixed;
     z-index: 10;
-    justify-content: flex-end;
-    align-items: flex-end;
-    display: inline-flex;
     width: 100%;
-    min-width: 450px;
-    height: 130px;
+    height: 150px;
     box-sizing: border-box;
-    border-bottom: 31px solid var(--violet);
-    background: white url("/media/images/tools.png") repeat-x left top;
-    background-size: 100px;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 2px var(--white);
+    background-color: var(--black);
+    font-family: 'Josefin Sans', sans-serif;
 }
 
+
 .header__name {
-    margin-right: auto;
-    padding-left: 15px;
-    font: 35px 'Rock Salt', cursive;
+    font-size: 70px;
+    color: var(--white);
+    font-family: 'Josefin Sans', sans-serif;
     text-decoration: none;
-    color: black;
+    position: absolute;
+    top: 20px;
+    user-select: none;
 }
 
 .header__search {
-    padding-bottom: 10px;
+    position: absolute;
+    bottom: 15px;
 }
 
 .header__search-bar {
-    width: 80px;
+    width: 270px;
     height: 20px;
-    font-size: 20px;
+    font-size: 14px;
+    padding: 3px;
 }
 
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
     .header__search-bar:hover {
         transition: width 0.3s linear 0.2s;
-        width: 200px;
+        width: 300px;
     }
 
-}
+} */
 
 .header__search-button {
     border: 0px;
     background-color: transparent;
     cursor: pointer;
     font-size: 20px;
+    color: var(--white);
+}
+
+.header__search-button:hover {
+    color: var(--violet);
+}
+
+.header__home,
+.header__login {
+    position: absolute;
+    top: 0;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.header__home {
+    right: 70px;
 }
 
 .header__login {
-    height: 20px;
-    padding: 3px 10px 11px 0;  
+    right: 10px;
+}
+
+.header__login:hover {
+    color: var(--violet);
+}
+
+.header__home:hover {
+    color: var(--violet);
 }

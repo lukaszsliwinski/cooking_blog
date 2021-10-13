@@ -2,12 +2,19 @@
 /* CSS rules to specify families:     */
 /* font-family: 'Rock Salt', cursive; */
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Nunito:wght@300&display=swap');
+/* font-family: 'Josefin Sans', sans-serif; */
+/* font-family: 'Nunito', sans-serif; */
+
 
 /* Colors */
 
 :root {
-    --violet: rgb(110, 55, 110);
-    --yellow: #fded0a;
+    /* --violet: rgb(110, 55, 110);
+    --yellow: #fded0a; */
+    --violet: rgb(134, 79, 134);
+    --black: rgb(15, 15, 15);
+    --white: rgb(220, 220, 220);
 }
 
 
@@ -16,6 +23,7 @@
 body {
     min-width: 600px;
     font-family: Tahoma;
+    background-color: var(--black);
     
 }
 
