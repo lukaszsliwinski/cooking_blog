@@ -4,22 +4,23 @@
 
 <section class="container">
     {% for dish in dishes %}
-    <article class="container__card">
-        <div class="container__dish-data">
-            <img class="container__data-icon" src="/media/images/dish16x16.png"> {{ dish.kind_of_meal}} / 
-            <img class="container__data-icon" src="/media/images/world256x256.png"> {{ dish.country}} / 
-            <img class="container__data-icon" src="/media/images/date512x512.png"> {{ dish.created_date|date:"Y-m-d" }}
-        </div>
+    <a href="{% url 'details' dish_id=dish.pk %}" class="container__card">
+
         {% if dish.dish_image %}
-        <a href="{% url 'details' dish_id=dish.pk %}"><img class="container__img-link" src="{{ dish.dish_image.url }}"></a>
+        <img class="container__img" src="{{ dish.dish_image.url }}">
         {% else %}
-        <a href="{% url 'details' dish_id=dish.pk %}"><img class="container__img-link" src="/media/images/default-dish-img.png"></a>
+        <img class="container__img" src="/media/images/default-dish-img.png">
         {% endif %}
-        <a href="{% url 'details' dish_id=dish.pk %}" class="container__dish-name">
+        <div class="container__dish-name">
             {% if dish.diet == True %} <img class="containter__diet-icon" src="/media/images/apple.png"> {% endif %}
             {{ dish }}
-        </a>
-    </article>
+        </div>
+        <div class="container__dish-wrapper">
+            <div class="container__dish-data"><img class="container__data-icon" src="/media/images/dish16x16.png"> {{ dish.kind_of_meal}}</div>
+            <div class="container__dish-data"><img class="container__data-icon" src="/media/images/world256x256.png"> {{ dish.country}}</div>
+            <div class="container__dish-data"><img class="container__data-icon" src="/media/images/date512x512.png"> {{ dish.created_date|date:"Y-m-d" }}</div>
+        </div>
+    </a>
     {% endfor %}
 </section>
 
