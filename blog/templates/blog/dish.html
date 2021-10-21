@@ -2,44 +2,47 @@
 
 {% block content %}
 
-<section class="dish">
+<div class="dish__wrapper">
 
-    <div class="dish__name">
-        <h2>{{ dish.dish_name }}</h2>
-    </div>
 
-    <div>
-        {% if dish.dish_image %}
-        <img class="dish__img" src="{{ dish.dish_image.url }}">
-        {% else %}
-        <img class="dish__img" src="/media/images/default-dish-img.png">
-        {% endif %}
-    </div>
+    <section class="dish__details">
 
-    <div class="dish__ingredients">
-        <h3>Lista składników:</h3>
-        <ul class="dish__ingredients-list">
-        {% for ing in dish.ingredient_set.all %}
-            {% if ing.quantity == NULL or ing.unit == '' %}
-            <li>{{ ing.ingredient }}</li>
+        <div class="dish__name">
+            <h2>{{ dish.dish_name }}</h2>
+        </div>
+
+        <div>
+            {% if dish.dish_image %}
+            <img class="dish__img" src="{{ dish.dish_image.url }}">
             {% else %}
-            <li>{{ ing.ingredient }} / {{ ing.quantity|floatformat:"-1" }} {{ ing.unit }}</li>
+            <img class="dish__img" src="/media/images/default-dish-img.png">
             {% endif %}
-        {% endfor %}
-        </ul>
-        <h3>Lista przypraw:</h3>
-        <ul class="dish__ingredients-list">
-        {% for spice in dish.spice_set.all %}
-            <li>{{ spice.spice }}</li>
-        {% endfor %}
-        </ul>
-    </div>
-      
-    <div class="dish__recipe">
-        <h3>Przygotowanie:</h3>
-        <article class="dish__recipe-details">{{ dish.recipe|linebreaks }}</article>
-    </div>
+        </div>
 
-</section>
+        <div class="dish__ingredients">
+            <h3>Lista składników:</h3>
+            <ul class="dish__ingredients-list">
+            {% for ing in dish.ingredient_set.all %}
+                {% if ing.quantity == NULL or ing.unit == '' %}
+                <li>{{ ing.ingredient }}</li>
+                {% else %}
+                <li>{{ ing.ingredient }} / {{ ing.quantity|floatformat:"-1" }} {{ ing.unit }}</li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            <h3>Lista przypraw:</h3>
+            <ul class="dish__ingredients-list">
+            {% for spice in dish.spice_set.all %}
+                <li>{{ spice.spice }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="dish__recipe">
+            <h3>Przygotowanie:</h3>
+            <article class="dish__recipe-details">{{ dish.recipe|linebreaks }}</article>
+        </div>
 
+    </section>
+</div>
 {% endblock %}
