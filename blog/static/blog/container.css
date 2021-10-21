@@ -7,15 +7,13 @@
     left: 200px;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
-    display: inline-flex;
+    justify-content: center;
+    display: flex;
 }
 
 .container__card {
-    flex-direction: column;
-    align-content: flex-end;
     display: flex;
-    margin-top: 10px;
+    margin: 10px 0 0 10px;
     box-sizing: border-box;
     width: 400px;
     min-width: 400px;
