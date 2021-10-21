@@ -7,7 +7,7 @@
     left: 200px;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     display: flex;
 }
 
@@ -18,7 +18,7 @@
     width: 400px;
     min-width: 400px;
     height: 250px;
-    color: black;
+    color: var(--black);
     font-weight: bold;
 }
 
