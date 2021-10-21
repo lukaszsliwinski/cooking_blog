@@ -3,25 +3,23 @@
 
 .header {
     position: fixed;
-    z-index: 10;
-    width: 100%;
-    height: 150px;
-    box-sizing: border-box;
+    z-index: 1;
     display: flex;
     justify-content: center;
     border-bottom: solid 2px var(--white);
+    box-sizing: border-box;
+    width: 100%;
+    height: 150px;
     background-color: var(--black);
     font-family: 'Josefin Sans', sans-serif;
 }
 
-
 .header__name {
-    font-size: 70px;
-    color: var(--white);
-    font-family: 'Josefin Sans', sans-serif;
-    text-decoration: none;
     position: absolute;
     top: 20px;
+    font-size: 70px;
+    color: var(--white);
+    text-decoration: none;
     user-select: none;
 }
 
@@ -33,17 +31,10 @@
 .header__search-bar {
     width: 270px;
     height: 20px;
-    font-size: 14px;
     padding: 3px;
+    font-size: 14px;
 }
 
-@media only screen and (max-width: 650px) {
-    .header__name {
-        font-size: 50px;
-        top: 40px;
-    }
-
-}
 
 .header__search-button {
     border: 0px;
@@ -61,10 +52,10 @@
 .header__login {
     position: absolute;
     top: 0;
-    color: white;
-    text-decoration: none;
     margin: 10px;
     font-size: 18px;
+    color: var(--white);
+    text-decoration: none;
 }
 
 .header__home {
@@ -78,4 +69,13 @@
 .header__home:hover,
 .header__login:hover {
     color: var(--violet);
+}
+
+
+@media only screen and (max-width: 650px) {
+    .header__name {
+        top: 40px;
+        font-size: 50px;
+    }
+
 }

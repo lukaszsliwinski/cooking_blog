@@ -3,13 +3,12 @@
 
 .container {
     position: absolute;
+    top: 150px;
+    left: 200px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     display: inline-flex;
-    top: 150px;
-    left: 200px;
-    /* width: calc(100% - 200px); */
 }
 
 .container__card {
@@ -41,13 +40,11 @@
 }
 
 .container__dish-wrapper {
-
-
     position: absolute;
     margin: 170px 20px;
     width: fit-content;
     min-width: fit-content;
-    background-color: white;
+    background-color: var(--white);
     font-size: 15px;
     text-transform: uppercase;
 }
@@ -63,12 +60,10 @@
 .container__dish-name {
     position: absolute;
     margin: 10px 20px;
-    padding: 5px;
-    background-color: white;
-
     max-width: 350px;
+    padding: 5px;
+    background-color: var(--white);
     font-size: 20px;
-
     text-transform: uppercase;
 }
 
@@ -77,6 +72,7 @@
     width: 15px;
     height: 15px;
 }
+
 
 @media only screen and (max-width: 650px) {
     .container {

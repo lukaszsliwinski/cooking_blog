@@ -1,17 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-/* CSS rules to specify families:     */
-/* font-family: 'Rock Salt', cursive; */
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Nunito:wght@300&display=swap');
-/* font-family: 'Josefin Sans', sans-serif; */
+/* CSS rules to specify families:     */
 /* font-family: 'Nunito', sans-serif; */
+/* font-family: 'Josefin Sans', sans-serif; */
 
 
 /* Colors */
 
 :root {
-    /* --violet: rgb(110, 55, 110);
-    --yellow: #fded0a; */
     --violet: rgb(134, 79, 134);
     --black: rgb(15, 15, 15);
     --white: rgb(220, 220, 220);
@@ -24,7 +19,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: var(--black);
-    min-width: 600px;
+    min-width: 650px;
     font-family: 'Nunito', sans-serif
 }
 

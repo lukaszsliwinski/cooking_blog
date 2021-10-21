@@ -1,14 +1,14 @@
 /* Styles dish details page */
 
-.dish__wrapper {
+
+.container__dish {
     position: absolute;
     top: 150px;
     left: 200px;
-
-    display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: inline-flex;
     width: calc(100% - 200px);
 
 }
@@ -17,8 +17,8 @@
     align-items: center;
     display: inline-flex;
     box-sizing: border-box;
-    color: white;
     width: 650px;
+    color: var(--white);
 }
 
 .dish__name {
@@ -38,7 +38,7 @@
 .dish__ingredients {
     display: block;
     margin-top: 20px;
-    border-top: 2px solid white;
+    border-top: 2px solid var(--white);
     box-sizing: border-box;
     min-width: 300px;
     width: 650px;
@@ -53,7 +53,7 @@
 .dish__recipe {
     display: block;
     margin: 20px 0 50px 0;
-    border-top: 3px solid white;
+    border-top: 3px solid var(--white);
     width: 650px;
     padding-top: 10px;
 }
@@ -63,13 +63,12 @@
     text-align: justify;
 }
 
+
 @media only screen and (max-width: 650px) {
-    .dish__wrapper {
-        width: 100%;
+    .container__dish {
         left: 0;
+        width: 100%;
     }
-
-
 }
 
 @media only screen and (max-width: 900px) {
