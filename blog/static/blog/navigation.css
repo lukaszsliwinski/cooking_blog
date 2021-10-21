@@ -8,15 +8,6 @@
     margin-left: 10px;
 }
 
-
-
-
-/* @media only screen and (max-width: 600px) {
-    .navigation__dropdown-diet {
-        display: none;
-    }
-} */
-
 /* menu */
 .menu__wrapper {
     height: 50px;
@@ -77,6 +68,13 @@
 
 @media only screen and (max-width: 650px) {
     .menu {
-        display: none;
+        left: -180px;
+        z-index: 10;
+        background-color: var(--black);
+    }
+
+    .menu:hover {
+        left: 0;
+        transition: 0.5s;
     }
 }
