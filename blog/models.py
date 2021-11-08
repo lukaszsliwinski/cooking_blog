@@ -10,11 +10,11 @@ KINDS_LIST = ['I śniadanie',
             'przekąska',
             ]
 
-COUNTRIES_LIST = ['Chiny',
+COUNTRIES_LIST = ['Francja',
+                'Gruzja',
                 'Grecja',
                 'Hiszpania',
                 'Indie',
-                'Portugalia',
                 'Tajlandia',
                 'INNE',
                 ]
