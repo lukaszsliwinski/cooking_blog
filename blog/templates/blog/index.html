@@ -7,12 +7,12 @@
     <a href="{% url 'details' dish_id=dish.pk %}" class="container__card">
 
         {% if dish.dish_image %}
-        <img class="container__img" src="{{ dish.dish_image.url }}">
+        <img class="container__img" src="{{ dish.dish_image.url }}" alt="dish photo">
         {% else %}
-        <img class="container__img" src="/media/images/default-dish-img.png">
+        <img class="container__img" src="/media/images/default-dish-img.png" alt="default photo">
         {% endif %}
         <div class="container__dish-name">
-            {% if dish.diet == True %} <img class="containter__diet-icon" src="/media/images/apple.png"> {% endif %}
+            {% if dish.diet == True %} <img class="containter__diet-icon" src="/media/images/apple.png" alt="diet icon"> {% endif %}
             {{ dish }}
         </div>
         <div class="container__dish-wrapper">
