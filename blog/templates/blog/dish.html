@@ -13,9 +13,9 @@
 
         <div>
             {% if dish.dish_image %}
-            <img class="dish__img" src="{{ dish.dish_image.url }}">
+            <img class="dish__img" src="{{ dish.dish_image.url }}" alt="dish photo">
             {% else %}
-            <img class="dish__img" src="/media/images/default-dish-img.png">
+            <img class="dish__img" src="/media/images/default-dish-img.png" alt="dish photo">
             {% endif %}
         </div>
 

@@ -16,9 +16,15 @@
             {{ dish }}
         </div>
         <div class="container__dish-wrapper">
-            <div class="container__dish-data"><img class="container__data-icon" src="/media/images/dish16x16.png"> {{ dish.kind_of_meal}}</div>
-            <div class="container__dish-data"><img class="container__data-icon" src="/media/images/world256x256.png"> {{ dish.country}}</div>
-            <div class="container__dish-data"><img class="container__data-icon" src="/media/images/date512x512.png"> {{ dish.created_date|date:"Y-m-d" }}</div>
+            <div class="container__dish-data">
+                <img class="container__data-icon" src="/media/images/dish16x16.png" alt="meal icon"> {{ dish.kind_of_meal}}
+            </div>
+            <div class="container__dish-data">
+                <img class="container__data-icon" src="/media/images/world256x256.png" alt="world icon"> {{ dish.country}}
+            </div>
+            <div class="container__dish-data">
+                <img class="container__data-icon" src="/media/images/date512x512.png" alt="date icon"> {{ dish.created_date|date:"Y-m-d" }}
+            </div>
         </div>
     </a>
     {% endfor %}
