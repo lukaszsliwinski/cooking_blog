@@ -7,6 +7,6 @@ urlpatterns = [
     path('category/<category>/', views.category, name='category'),
     path('country/<country>/', views.country, name='country'),
     path('search/', views.search, name='search'),
-    path('category_diet/<category>/', views.category_diet, name='category_diet'),
-    path('country_diet/<country>/', views.country_diet, name='country_diet')
+    path('category_low_calories/<category>/', views.category_low_calories, name='category_low_calories'),
+    path('country_low_calories/<country>/', views.country_low_calories, name='country_low_calories')
 ]

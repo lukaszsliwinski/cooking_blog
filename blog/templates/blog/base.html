@@ -45,27 +45,27 @@
 
             <div class="menu__wrapper">
                 <button class="menu__title">
-                    KATEGORIE <img class="containter__diet-icon" src="/media/images/apple.png" alt="diet icon">
+                    KATEGORIE <img class="containter__apple-icon" src="/media/images/apple.png" alt="apple icon">
                 </button>
                 <ul class="menu__accordion">
                     {% for kind in kinds_list %}
-                    <li><a href="{% url 'category_diet' category=kind %}" class="menu__link">{{ kind }}</a></li>
+                    <li><a href="{% url 'category_low_calories' category=kind %}" class="menu__link">{{ kind }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
 
             <div class="menu__wrapper">
                 <button class="menu__title">
-                    KRAJE <img class="containter__diet-icon" src="/media/images/apple.png" alt="diet icon">
+                    KRAJE <img class="containter__apple-icon" src="/media/images/apple.png" alt="apple icon">
                 </button>
                 <ul class="menu__accordion">
                     {% for country in countries_list %}
-                    <li><a href="{% url 'country_diet' country=country %}" class="menu__link">{{ country }}</a></li>
+                    <li><a href="{% url 'country_low_calories' country=country %}" class="menu__link">{{ country }}</a></li>
                     {% endfor %}
             </div>
             <script type="text/javascript" src="{% static 'blog/menu.js' %}"></script>
             <div class="menu__legend">
-                <img class="containter__diet-icon" src="/media/images/apple.png" alt="diet icon"> - DIETETYCZNE
+                <img class="containter__apple-icon" src="/media/images/apple.png" alt="apple icon"> - DIETETYCZNE
             </div>
         </nav>
         {% block content %}

@@ -61,7 +61,7 @@ class Dish(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     kind_of_meal = models.CharField(max_length=30, default=None, choices=KINDS_CHOICES)
     country = models.CharField(max_length=30, default=None, choices=COUNTRIES_CHOICES)
-    diet = models.BooleanField(default=True)
+    low_calories = models.BooleanField(default=True)
 
     def __str__(self):
         return self.dish_name

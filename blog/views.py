@@ -26,14 +26,14 @@ def country(request, country):
     countries_list = COUNTRIES_LIST
     return render(request, 'blog/index.html', {'dishes': dishes, 'kinds_list': kinds_list, 'countries_list': countries_list})
 
-def category_diet(request, category):
-    dishes = Dish.objects.filter(kind_of_meal=category, diet=True).order_by('-created_date')
+def category_low_calories(request, category):
+    dishes = Dish.objects.filter(kind_of_meal=category, low_calories=True).order_by('-created_date')
     kinds_list = KINDS_LIST
     countries_list = COUNTRIES_LIST
     return render(request, 'blog/index.html', {'dishes': dishes, 'kinds_list': kinds_list, 'countries_list': countries_list})
 
-def country_diet(request, country):
-    dishes = Dish.objects.filter(country=country, diet=True).order_by('-created_date')
+def country_low_calories(request, country):
+    dishes = Dish.objects.filter(country=country, low_calories=True).order_by('-created_date')
     kinds_list = KINDS_LIST
     countries_list = COUNTRIES_LIST
     return render(request, 'blog/index.html', {'dishes': dishes, 'kinds_list': kinds_list, 'countries_list': countries_list})

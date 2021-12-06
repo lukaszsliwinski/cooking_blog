@@ -12,7 +12,7 @@
         <img class="container__img" src="/media/images/default-dish-img.png" alt="default photo">
         {% endif %}
         <div class="container__dish-name">
-            {% if dish.diet == True %} <img class="containter__diet-icon" src="/media/images/apple.png" alt="diet icon"> {% endif %}
+            {% if dish.low_calories == True %} <img class="containter__apple-icon" src="/media/images/apple.png" alt="apple icon"> {% endif %}
             {{ dish }}
         </div>
         <div class="container__dish-wrapper">
